@@ -1,5 +1,5 @@
 Use in Mac Air:
-1.  git pull origin main  // to pull online code
+1.  git pull origin master  // to pull online code
 2.  git add <new file>   // to add new file to repo
 3.  git commit -m "comments" // add comments to the repo
-4.  git push origin main
+4.  git push origin master
