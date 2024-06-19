@@ -1,0 +1,5 @@
+Use in desktop:
+1. git pull                 // to pull online code
+2. git add <new file>       // to add new file to repo
+3. git commit -m "comment"    // add comments to the repo
+4. git push                  // push the code to online 
