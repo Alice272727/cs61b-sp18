@@ -61,20 +61,7 @@ public class IntList {
       ptr = ptr.rest;
     }
     return res;
-  public static IntList squareListIterative(IntList L) {
-    if (L == null) {
-      return null;
-    }
-    IntList res = new IntList(L.first * L.first, null);
-    IntList ptr = res;
-    L = L.rest;
-    while (L != null) {
-      ptr.rest = new IntList(L.first * L.first, null);
-      L = L.rest;
-      ptr = ptr.rest;
-    }
-    return res;
-  }}
+  }
 
   /**
    * Returns a list equal to L with all elements squared. Non-destructive.
