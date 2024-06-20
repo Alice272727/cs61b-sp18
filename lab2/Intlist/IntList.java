@@ -86,16 +86,12 @@ public class IntList {
       return B;
     }
     IntList New_A = A;
-    int count = 0;
-    while (New_A != null) {
+    while (New_A.rest != null) {
       New_A = New_A.rest;
-      count += 1;
     }
-    for (int j = 0; j < count - 1; j++) {
-      A = A.rest;
-    }
-    A.rest = B;
-    return null;
+    
+    New_A.rest = B;
+    return A;
   }
 
   /**
