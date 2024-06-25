@@ -106,7 +106,7 @@ public class ArrayDeque<T> {
 
   // }
 
-  public static void main(String[] args) {
-    ArrayDeque<String> A = new ArrayDeque<>();
-  }
+  // public static void main(String[] args) {
+  // ArrayDeque<String> A = new ArrayDeque<>();
+  // }
 }
