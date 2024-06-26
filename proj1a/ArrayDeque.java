@@ -5,7 +5,7 @@ public class ArrayDeque<T> {
     private int nextLast;
 
     public ArrayDeque() {
-        items = (T[]) new Object[4];
+        items = (T[]) new Object[8];
         size = 0;
         nextFirst = 0;
         nextLast = 1;
@@ -156,8 +156,8 @@ public class ArrayDeque<T> {
         int head = nextFirst + 1;
         int count = 0;
         if (index < items.length) {
-            for(int i = 0; i < items.length; i++)
-                if(count == index) {
+            for (int i = 0; i < items.length; i++) {
+                if (count == index) {
                     return items[head];
                 } else {
                     count += 1;
@@ -166,20 +166,19 @@ public class ArrayDeque<T> {
                         head = head % items.length;
                     }
                 }
-                
+            }
         }
         return null;
     }
-        
 
-        public static void main(String[] args) {
-            ArrayDeque<Integer> L = new ArrayDeque<>();
-            L.addFirst(1);
-            L.addLast(2);
-            L.addFirst(1);
-            L.addLast(4); 
-            L.addFirst(5);
-            L.get(0);
-        }
+    // public static void main(String[] args) {
+    // ArrayDeque<Integer> L = new ArrayDeque<>();
+    // L.addFirst(1);
+    // L.addLast(2);
+    // L.addFirst(1);
+    // L.addLast(4);
+    // L.addFirst(5);
+    // L.get(0);
+    // }
 
 }
