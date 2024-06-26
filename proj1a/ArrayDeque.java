@@ -59,12 +59,12 @@ public class ArrayDeque<T> {
             nextFirst -= 1;
             size += 1;
         } else {
-            if (nextFirst < 0) {
-                nextFirst = items.length - 1;
-            }
             items[nextFirst] = item;
             size += 1;
             nextFirst -= 1;
+            if (nextFirst < 0) {
+                nextFirst = items.length - 1;
+            }
         }
     }
 
@@ -80,11 +80,11 @@ public class ArrayDeque<T> {
             nextLast += 1;
             size += 1;
         } else {
+            items[nextLast] = item;
+            nextLast += 1;
             if (nextLast >= items.length) {
                 nextLast = nextLast % items.length;
             }
-            items[nextLast] = item;
-            nextLast += 1;
             size += 1;
         }
     }
@@ -127,14 +127,17 @@ public class ArrayDeque<T> {
         if (size == 0) {
             return null;
         }
-        if (size <= (items.length * 0.5)) {
-            resize(items.length / 2 + 1);
+        if (size <= (items.length * 0.5) && items.length > 8) {
+            resize(items.length / 2);
         }
         int head = nextFirst + 1;
         if (head < items.length) {
             T ele = items[head];
             items[head] = null;
             nextFirst += 1;
+            if(nextFirst == items.length) {
+                nextFirst = -1;
+            }
             size -= 1;
             return ele;
         } else {
@@ -142,7 +145,7 @@ public class ArrayDeque<T> {
             T ele = items[head];
             items[head] = null;
             nextFirst += 1;
-            nextFirst = nextFirst % items.length;
+            // nextFirst = nextFirst % items.length;
             return ele;
         }
     }
@@ -155,8 +158,8 @@ public class ArrayDeque<T> {
         if (size == 0) {
             return null;
         }
-        if (size <= (items.length * 0.5)) {
-            resize(items.length / 2 + 1);
+        if (size <= (items.length * 0.5) && items.length > 8) {
+            resize(items.length / 2);
         }
         int tail = nextLast - 1;
         if (tail >= 0) {
@@ -190,7 +193,7 @@ public class ArrayDeque<T> {
                 } else {
                     count += 1;
                     head += 1;
-                    if (head == items.length) {
+                    if (head >= items.length) {
                         head = head % items.length;
                     }
                 }
@@ -200,11 +203,11 @@ public class ArrayDeque<T> {
     }
 
     // public static void main(String[] args) {
-    // ArrayDeque<Integer> A = new ArrayDeque<>();
-    // for (int i = 0; i < 8; i++) {
-    // A.addFirst(i);
-    // }
-    // A.get(5);
+    //     ArrayDeque<Integer> A = new ArrayDeque<>();
+    //     for (int i = 0; i < 3; i++) {
+    //         A.addFirst(i);
+    //     }
+    //     int b = A.removeFirst();
     // }
 
 }
