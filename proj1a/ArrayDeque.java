@@ -135,7 +135,7 @@ public class ArrayDeque<T> {
             T ele = items[head];
             items[head] = null;
             nextFirst += 1;
-            if(nextFirst == items.length) {
+            if (nextFirst == items.length) {
                 nextFirst = -1;
             }
             size -= 1;
@@ -203,11 +203,11 @@ public class ArrayDeque<T> {
     }
 
     // public static void main(String[] args) {
-    //     ArrayDeque<Integer> A = new ArrayDeque<>();
-    //     for (int i = 0; i < 3; i++) {
-    //         A.addFirst(i);
-    //     }
-    //     int b = A.removeFirst();
+    // ArrayDeque<Integer> A = new ArrayDeque<>();
+    // for (int i = 0; i < 3; i++) {
+    // A.addFirst(i);
+    // }
+    // int b = A.removeFirst();
     // }
 
 }
