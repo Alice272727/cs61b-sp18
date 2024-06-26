@@ -59,7 +59,7 @@ public class ArrayDeque<T> {
             nextFirst -= 1;
             size += 1;
         } else {
-            if(nextFirst < 0) {
+            if (nextFirst < 0) {
                 nextFirst = items.length - 1;
             }
             items[nextFirst] = item;
@@ -80,7 +80,7 @@ public class ArrayDeque<T> {
             nextLast += 1;
             size += 1;
         } else {
-            if(nextLast >= items.length) {
+            if (nextLast >= items.length) {
                 nextLast = nextLast % items.length;
             }
             items[nextLast] = item;
