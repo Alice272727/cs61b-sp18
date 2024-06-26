@@ -28,6 +28,22 @@ public class ArrayDeque<T> {
             nextLast = size;
             nextFirst = capacity - 1;
             items = a;
+        } else {
+            T[] a = (T[]) new Object[capacity];
+            int head = nextFirst + 1;
+            int j = 0;
+            for (int i = 0; i < capacity; i++) {
+                if (head < items.length) {
+                    a[i] = items[head];
+                    head += 1;
+                } else {
+                    a[i] = items[j];
+                    j += 1;
+                }
+            }
+            nextLast = size;
+            nextFirst = capacity - 1;
+            items = a;
         }
     }
 
@@ -105,6 +121,9 @@ public class ArrayDeque<T> {
         if (size == 0) {
             return null;
         }
+        if (size <= (items.length * 0.5)) {
+            resize(items.length / 2 + 1);
+        }
         int head = nextFirst + 1;
         if (head < items.length) {
             T ele = items[head];
@@ -129,6 +148,9 @@ public class ArrayDeque<T> {
     public T removeLast() {
         if (size == 0) {
             return null;
+        }
+        if (size <= (items.length * 0.5)) {
+            resize(items.length / 2 + 1);
         }
         int tail = nextLast - 1;
         if (tail >= 0) {
@@ -155,7 +177,7 @@ public class ArrayDeque<T> {
     public T get(int index) {
         int head = nextFirst + 1;
         int count = 0;
-        if (index < items.length) {
+        if (index < size) {
             for (int i = 0; i < items.length; i++) {
                 if (count == index) {
                     return items[head];
@@ -172,13 +194,13 @@ public class ArrayDeque<T> {
     }
 
     // public static void main(String[] args) {
-    // ArrayDeque<Integer> L = new ArrayDeque<>();
-    // L.addFirst(1);
-    // L.addLast(2);
-    // L.addFirst(1);
-    // L.addLast(4);
-    // L.addFirst(5);
-    // L.get(0);
+    //     ArrayDeque<Integer> L = new ArrayDeque<>();
+    //     L.addFirst(1);
+    //     L.addLast(2);
+    //     L.addFirst(1);
+    //     L.addLast(4);
+    //     L.addFirst(5);
+    //     L.get(4);
     // }
 
 }
