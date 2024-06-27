@@ -184,7 +184,13 @@ public class ArrayDeque<T> {
      * and so forth. If no such item exists, returns null. Must not alter the deque
      */
     public T get(int index) {
+        if (nextFirst > items.length) {
+            nextFirst = nextFirst % items.length;
+        }
         int head = nextFirst + 1;
+        if (head >= items.length) {
+            head = head % items.length;
+        }
         int count = 0;
         if (index < size) {
             for (int i = 0; i < items.length; i++) {
@@ -204,10 +210,12 @@ public class ArrayDeque<T> {
 
     // public static void main(String[] args) {
     // ArrayDeque<Integer> A = new ArrayDeque<>();
-    // for (int i = 0; i < 3; i++) {
-    // A.addFirst(i);
+    // for (int i = 0; i < 16; i++) {
+    // A.addLast(i);
     // }
-    // int b = A.removeFirst();
+    // int b = A.get(0);
+    // int c = A.get(15);
+    // int d = A.get(16);
     // }
 
 }
