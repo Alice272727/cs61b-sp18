@@ -41,7 +41,7 @@ public class ArrayDeque<T> {
                     j += 1;
                 }
             }
-            nextLast = size;
+            nextLast = 0;
             nextFirst = capacity - 1;
             items = a;
         }
@@ -220,6 +220,30 @@ public class ArrayDeque<T> {
 
     // public static void main(String[] args) {
     // ArrayDeque<Integer> A = new ArrayDeque<>();
+    // A.addFirst(0);
+    // A.addFirst(1);
+    // A.removeLast();
+    // A.get(0);
+    // A.addFirst(4);
+    // A.get(0);
+    // A.addFirst(6);
+    // A.addLast(7);
+    // A.removeFirst();
+    // A.get(1);
+    // A.removeFirst();
+    // A.get(1);
+    // A.addFirst(12);
+    // A.addFirst(13);
+    // A.addFirst(14);
+    // A.addLast(15);
+    // A.get(3);
+    // A.addFirst(17);
+    // A.addLast(18);
+    // A.addLast(19);
+    // A.removeLast();
+    // A.removeFirst();
+    // A.addLast(22);
+    // }
     // A.size();
     // A.addLast(1);
     // A.removeLast();
