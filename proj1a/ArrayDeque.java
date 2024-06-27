@@ -147,7 +147,11 @@ public class ArrayDeque<T> {
             head = head % items.length;
             T ele = items[head];
             items[head] = null;
+            size -= 1;
             nextFirst += 1;
+            if (nextFirst == items.length) {
+                nextFirst = nextFirst % items.length;
+            }
             // nextFirst = nextFirst % items.length;
             return ele;
         }
@@ -212,15 +216,19 @@ public class ArrayDeque<T> {
     }
 
     // public static void main(String[] args) {
-    // ArrayDeque<Integer> A = new ArrayDeque<>();
-    // A.addFirst(0);
-    // A.removeLast();
-    // A.addFirst(2);
-    // A.addLast(3);
-    // A.addLast(4);
-    // A.size();
-    // A.removeLast();
-    // A.removeFirst();
+    //     ArrayDeque<Integer> A = new ArrayDeque<>();
+    //     A.addFirst(0);
+    //     A.addFirst(1);
+    //     A.addLast(2);
+    //     A.get(2);
+    //     A.get(1);
+    //     A.addLast(5);
+    //     A.get(3);
+    //     A.removeFirst();
+    //     A.removeLast();
+    //     A.removeFirst();
+    //     A.addFirst(10);
+    // }
     // }
     // for (int i = 0; i < 16; i++) {
     // A.addLast(i);
