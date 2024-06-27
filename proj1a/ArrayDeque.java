@@ -51,7 +51,10 @@ public class ArrayDeque<T> {
     public void addFirst(T item) {
         if (size == 0) {
             items[nextFirst] = item;
-            nextFirst = items.length - 1;
+            nextFirst = nextFirst - 1;
+            if (nextFirst < 0) {
+                nextFirst = items.length - 1;
+            }
             size += 1;
         } else if (size == items.length) {
             resize(size * 2);
@@ -210,6 +213,15 @@ public class ArrayDeque<T> {
 
     // public static void main(String[] args) {
     // ArrayDeque<Integer> A = new ArrayDeque<>();
+    // A.addFirst(0);
+    // A.removeLast();
+    // A.addFirst(2);
+    // A.addLast(3);
+    // A.addLast(4);
+    // A.size();
+    // A.removeLast();
+    // A.removeFirst();
+    // }
     // for (int i = 0; i < 16; i++) {
     // A.addLast(i);
     // }
