@@ -25,16 +25,16 @@ public class Palindrome {
         }
     }
 
-    private int shrink(Deque<Character> DQ) {
-        if (DQ.removeFirst() != DQ.removeLast()) {
-            int newLen = DQ.size() + 2;
+    private int shrink(Deque<Character> dQ) {
+        if (dQ.removeFirst() != dQ.removeLast()) {
+            int newLen = dQ.size() + 2;
             return newLen;
-        } else if (DQ.size() == 0 || DQ.size() == 1) {
-            return DQ.size();
+        } else if (dQ.size() == 0 || dQ.size() == 1) {
+            return dQ.size();
         } else {
-            DQ.removeFirst();
-            DQ.removeLast();
-            return shrink(DQ);
+            dQ.removeFirst();
+            dQ.removeLast();
+            return shrink(dQ);
         }
     }
 
@@ -49,7 +49,7 @@ public class Palindrome {
             return true;
         }
         Deque<Character> newDq = wordToDeque(word);
-        int halflen = (newDq.size() / 2); 
+        int halflen = (newDq.size() / 2);
         for (int i = 0; i < halflen; i++) {
             Character x = newDq.removeFirst();
             Character y = newDq.removeLast();

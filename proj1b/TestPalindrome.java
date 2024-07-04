@@ -18,20 +18,20 @@ public class TestPalindrome {
 
     @Test
     public void testIsPalindrome() {
-        assertEquals(false,palindrome.isPalindrome("cat"));
-        assertEquals(true,palindrome.isPalindrome("a"));
-        assertEquals(true,palindrome.isPalindrome("")); 
-        assertEquals(true,palindrome.isPalindrome("A"));  
-        assertEquals(true,palindrome.isPalindrome("racecar"));
-        assertEquals(true,palindrome.isPalindrome("noon")); 
+        assertEquals(false, palindrome.isPalindrome("cat"));
+        assertEquals(true, palindrome.isPalindrome("a"));
+        assertEquals(true, palindrome.isPalindrome(""));
+        assertEquals(true, palindrome.isPalindrome("A"));
+        assertEquals(true, palindrome.isPalindrome("racecar"));
+        assertEquals(true, palindrome.isPalindrome("noon"));
 
         CharacterComparator cc = new OffByOne();
-        assertEquals(true,palindrome.isPalindrome("boa", cc));
-        assertEquals(true,palindrome.isPalindrome("a", cc));
-        assertEquals(true,palindrome.isPalindrome("", cc)); 
-        assertEquals(true,palindrome.isPalindrome("A", cc));  
-        assertEquals(true,palindrome.isPalindrome("acdb", cc));
-        assertEquals(false,palindrome.isPalindrome("pctsq", cc)); 
+        assertEquals(true, palindrome.isPalindrome("boa", cc));
+        assertEquals(true, palindrome.isPalindrome("a", cc));
+        assertEquals(true, palindrome.isPalindrome("", cc));
+        assertEquals(true, palindrome.isPalindrome("A", cc));
+        assertEquals(true, palindrome.isPalindrome("acdb", cc));
+        assertEquals(false, palindrome.isPalindrome("pctsq", cc));
 
     }
 }
