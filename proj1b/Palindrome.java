@@ -32,8 +32,6 @@ public class Palindrome {
         } else if (dQ.size() == 0 || dQ.size() == 1) {
             return dQ.size();
         } else {
-            dQ.removeFirst();
-            dQ.removeLast();
             return shrink(dQ);
         }
     }

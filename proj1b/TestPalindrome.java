@@ -24,6 +24,8 @@ public class TestPalindrome {
         assertEquals(true, palindrome.isPalindrome("A"));
         assertEquals(true, palindrome.isPalindrome("racecar"));
         assertEquals(true, palindrome.isPalindrome("noon"));
+        assertEquals(true, palindrome.isPalindrome("cs61b16sc"));
+         
 
         CharacterComparator cc = new OffByOne();
         assertEquals(true, palindrome.isPalindrome("boa", cc));

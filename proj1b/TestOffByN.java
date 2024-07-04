@@ -10,7 +10,7 @@ public class TestOffByN {
 
     // Your tests go here.
     @Test
-    public void TestequalChars() {
+    public void testequalChars() {
         assertEquals(false, offByN.equalChars('a', 'b'));
         assertEquals(true, offByN.equalChars('a', 'f'));
         assertEquals(true, offByN.equalChars('b', 'g'));
