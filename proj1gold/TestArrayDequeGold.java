@@ -11,40 +11,39 @@ public class TestArrayDequeGold {
 
     @Test
     public void testArraydeque() {
-        StudentArrayDeque<Integer> sad1 = new StudentArrayDeque<>();
-        ArrayDequeSolution<Integer> example1 = new ArrayDequeSolution<>();
+        StudentArrayDeque<Integer> student = new StudentArrayDeque<>();
+        ArrayDequeSolution<Integer> solution = new ArrayDequeSolution<>();
 
-        for (int i = 0; i < 20; i += 1) {
+        String message = "";
+        for (int i = 0; i < 500; i += 1) {
             double numberBetweenZeroAndOne = StdRandom.uniform();
 
             if (numberBetweenZeroAndOne < 0.25 && numberBetweenZeroAndOne >= 0) {
-                sad1.addLast(i);
-                Integer expected = i;
-                example1.addLast(i);
-                Integer actual = i;
-                assertEquals("addLast(" + i + ")\n", expected, actual);
+                student.addLast(i);
+                solution.addLast(i);
+                message += "addLast(" + i + ")\n";
             } else if (0.25 <= numberBetweenZeroAndOne && numberBetweenZeroAndOne <= 0.5) {
-                Integer expected = i;
-                sad1.addFirst(i);
-                example1.addFirst(i);
-                Integer actual = i;
-                assertEquals("addFirst(" + i + ")\n", expected, actual);
+                student.addFirst(i);
+                solution.addFirst(i);
+                message += "addFirst(" + i + ")\n";
             } else if (numberBetweenZeroAndOne > 0.5 && numberBetweenZeroAndOne <= 0.75) {
-                if (sad1.size() == 0) {
-                    break;
+                if (student.size() == 0 && solution.size() == 0) {
+                    continue;
                 } else {
-                    Integer expected = sad1.removeFirst();
-                    Integer actual = example1.removeFirst();
-                    assertEquals("removeFirst()", expected, actual);
+                    Integer S1 = student.removeFirst();
+                    Integer E1 = solution.removeFirst();
+                    message += "removeFirst()\n";
+                    assertEquals(message, E1, S1);
                 }
 
             } else if (numberBetweenZeroAndOne > 0.75 && numberBetweenZeroAndOne <= 1) {
-                if (sad1.size() == 0) {
-                    break;
+                if (student.size() == 0 && solution.size() == 0) {
+                    continue;
                 } else {
-                    Integer expected = sad1.removeLast();
-                    Integer actual = example1.removeLast();
-                    assertEquals("removeLast()", expected, actual);
+                    Integer S2 = student.removeLast();
+                    Integer E2 = solution.removeLast();
+                    message += "removeLast()\n";
+                    assertEquals(message, E2, S2);
                 }
             }
 
