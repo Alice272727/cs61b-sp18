@@ -1,8 +1,7 @@
 //package <package name>;
 package synthesizer;
 
-import java.lang.Math; //Need to use Math.round()
-// import java.util.
+// import java.lang.Math; //Need to use Math.round()
 
 //Make sure this class is public
 public class GuitarString {

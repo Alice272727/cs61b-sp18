@@ -3,9 +3,6 @@ package synthesizer;
 
 import java.util.Iterator;
 
-import javax.crypto.spec.RC2ParameterSpec;
-import javax.management.RuntimeErrorException;
-
 public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T> {
     /* Index for the next dequeue or peek. */
     private int first; // index for the next dequeue or peek
